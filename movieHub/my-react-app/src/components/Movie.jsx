@@ -31,8 +31,8 @@ function Movie(){
     return (
         <>
         <div>
-            <label htmlFor="name" onChange={(inp) => setInput(inp.target.value)} value={input} >Enter movies:</label>
-            <input type="text" placeholder="movies name"/>
+            <label htmlFor="name"  >Enter movies:</label>
+            <input type="text" placeholder="movies name" onChange={(inp) => setInput(inp.target.value)} value={input}/>
             <button onClick={handleClick}>Search</button>
         </div>
 
