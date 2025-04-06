@@ -10,13 +10,17 @@ function Movie(){
 
     async function handleClick(){
 
-        let res = await axios.get(`https://www.omdbapi.com/?i=tt3896198&apikey=d047c95&t=${input}`)
-        console.log(res.data)
-
-
-        setMovies(res.data)
-
-        console.log(movies)
+        try {
+            let res = await axios.get(`https://www.omdbapi.com/?apikey=d047c95&s=${input}`)
+            console.log(res.data)
+    
+    
+            setMovies(res.data)
+    
+            // console.log(movies)
+        } catch (error) {
+            console.log("handleClick  -", err)
+        }
     }
 
    
@@ -33,7 +37,7 @@ function Movie(){
         </div>
 
         <div>
-            <h2>moviess</h2>
+            <h2>movies</h2>
             {movies && (
                 <div>                 
                    {movies.map(movie =>(
