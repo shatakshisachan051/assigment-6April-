@@ -1,10 +1,16 @@
 .movieBox{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 
 }
 .box{
-
-    width: 200px;
+   padding: 4px;
+    width: 250px;
     margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 2px solid grey;
 }
