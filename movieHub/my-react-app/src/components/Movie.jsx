@@ -5,18 +5,18 @@ import axios from "axios";
 
 function Movie(){
 
-    let [movie,setMovie]= useState();
+    let [movies,setMovies]= useState();
     let [input,setInput]= useState("")
 
     async function handleClick(){
 
-        let res = await axios.get(`https://www.omdbapi.com/?i=tt3896198&apikey=d047c95&y=2006$s=${input}`)
+        let res = await axios.get(`https://www.omdbapi.com/?i=tt3896198&apikey=d047c95&t=${input}`)
         console.log(res.data)
 
 
-        setMovie(res.data)
+        setMovies(res.data)
 
-        console.log(movie)
+        console.log(movies)
     }
 
    
@@ -27,14 +27,28 @@ function Movie(){
     return (
         <>
         <div>
-            <label htmlFor="name" onChange={(inp) => setInput(inp.target.value)} value={input} >Enter Movie:</label>
-            <input type="text" placeholder="movie name"/>
+            <label htmlFor="name" onChange={(inp) => setInput(inp.target.value)} value={input} >Enter movies:</label>
+            <input type="text" placeholder="movies name"/>
             <button onClick={handleClick}>Search</button>
         </div>
 
         <div>
-            <h2>Movies</h2>
-                    </div>
+            <h2>moviess</h2>
+            {movies && (
+                <div>
+                    
+                   { movies.map(movie =>(
+
+                        <div>
+                            <h3>{movie.Title}</h3>
+                            <img src={movie.Poster} alt="movie poster" />
+                            <p>{movie.Year}</p>
+                            
+                        </div>
+                    )}
+                </div>
+            )}
+            </div>
         </>
     )
 }
