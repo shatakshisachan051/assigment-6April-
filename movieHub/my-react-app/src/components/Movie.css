@@ -1,4 +1,10 @@
 .movieBox{
     display: flex;
-    
+    flex-wrap: wrap;
+
+}
+.box{
+
+    width: 200px;
+    margin: 20px;
 }
