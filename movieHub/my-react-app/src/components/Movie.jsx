@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import './Movie.css'
 
 // url =https://www.omdbapi.com/?i=tt3896198&apikey=d047c95
 
@@ -39,10 +40,10 @@ function Movie(){
         <div>
             <h2>Movies</h2>
             {movies.length>0 && (
-                <div>                 
+                <div className="movieBox">                 
                    {movies.map(movie =>(
 
-                        <div key={movie.imdbID}>
+                        <div key={movie.imdbID} className="box">
                             <h3>{movie.Title}</h3>
                             <img src={movie.Poster} alt="movie poster" />
                             <p>{movie.Year}</p>
