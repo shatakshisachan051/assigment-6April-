@@ -42,7 +42,7 @@ function Movie(){
                 <div>                 
                    {movies.map(movie =>(
 
-                        <div>
+                        <div key={movie.imdbID}>
                             <h3>{movie.Title}</h3>
                             <img src={movie.Poster} alt="movie poster" />
                             <p>{movie.Year}</p>
