@@ -20,7 +20,7 @@ function Movie(){
     
             // console.log(movies)
         } catch (error) {
-            console.log("handleClick  -", err)
+            console.log("handleClick  - ", err)
         }
     }
 
