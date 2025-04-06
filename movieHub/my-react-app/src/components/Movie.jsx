@@ -5,17 +5,17 @@ import axios from "axios";
 
 function Movie(){
 
-    let [movies,setMovies]= useState();
+    let [movies,setMovies]= useState([]);
     let [input,setInput]= useState("")
 
     async function handleClick(){
 
         try {
-            let res = await axios.get(`https://www.omdbapi.com/?apikey=d047c95&s=${input}`)
+            let res = await axios.get(`https://www.omdbapi.com/?i=tt3896198&apikey=d047c95&s=${input}`)
             console.log(res.data)
     
     
-            setMovies(res.data)
+            setMovies(res.data.Search)
     
             // console.log(movies)
         } catch (error) {
@@ -37,8 +37,8 @@ function Movie(){
         </div>
 
         <div>
-            <h2>movies</h2>
-            {movies && (
+            <h2>Movies</h2>
+            {movies.length>0 && (
                 <div>                 
                    {movies.map(movie =>(
 
