@@ -35,9 +35,8 @@ function Movie(){
         <div>
             <h2>moviess</h2>
             {movies && (
-                <div>
-                    
-                   { movies.map(movie =>(
+                <div>                 
+                   {movies.map(movie =>(
 
                         <div>
                             <h3>{movie.Title}</h3>
@@ -45,7 +44,7 @@ function Movie(){
                             <p>{movie.Year}</p>
                             
                         </div>
-                    )}
+                    ))}
                 </div>
             )}
             </div>
