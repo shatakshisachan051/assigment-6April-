@@ -1,0 +1,17 @@
+Write a function that takes a list of user-submitted tags (strings), 
+cleans each tag by removing leading/trailing spaces, converting to lowercase, and 
+removing any special characters, then joins the unique tags with commas. 
+Use map, trim, split, and join operations.
+
+Input:
+
+[
+  " JavaScript ",
+  "python",
+  "JAVASCRIPT",
+  " machine-learning",
+  "Python  ",
+  " Data Science!",
+  "machine_learning"
+]
+
